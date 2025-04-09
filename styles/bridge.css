@@ -1,0 +1,15 @@
+body {
+  background-image: url(../static/bridge.png);
+}
+
+#knight {
+  position: fixed;
+  cursor: pointer;
+  width: 150px;
+  right: 5%;
+  bottom: 5%;
+}
+
+#knight > img {
+  width: 150px;
+}

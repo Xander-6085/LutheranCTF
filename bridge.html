@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="styles/bridge.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>challenge</title>
+</head>
+
+<body>
+  <div id="battle"></div>
+  <audio loop id="audio">
+    <source src="static/gl.mp3" type="audio/mpeg">
+    </source>
+    </audio>
+    <section class="section">
+      <div class="container">
+        <div class="columns  box">
+          <div class="column">
+            <div class="columns">
+              <div class="column has-text-centered">
+                <h1 class="title">
+                  The Bridge Troll
+                </h1>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column">
+                <div class="card-content" style="height:600px;overflow:auto;flex-grow: 1;flex-shrink: 1;">
+                  <div class="content messageHistory">
+
+                        <div class="columns">
+                            <div class="column">
+                                <div class="notification is-info">
+                                  Greetings, foolish traveler. I do hope your slumber within the tower was well? As the troll of this bridge you must answer my riddle if you ever wish to see the flag that shall grant you your freedom, but I doubt you could ever solve a riddle as fantastic as this. Now tell me, are you ready to begin the challenge?
+                                </div>
+                            </div>
+                            <div class="column is-one-third"></div>
+                        </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="columns">
+              <div class="column">
+                <input class="input message" type="text" placeholder="Type your message">
+              </div>
+              <div class="column is-narrow">
+                <button class="button is-info sendMessage">
+                  Send
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="columns box is-hidden">
+          <div class="column result"></div>
+        </div>
+        <div class="columns box is-hidden">
+          <div class="column notification is-danger error has-text-centered">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="knight" onclick="alert('Good Morrow!\n\nI see you have run into quite some trouble with the bridge troll! Try your best to manipulate him into giving you the flag and escape this devious trap!\n\nBy the way, if he turns you down, use &quot;refresh&quot; magic to make him forget all about your encounter!')"><img src="static/knightbox2.gif"></img></div> 
+    <script type="text/javascript" src="scripts/bridge.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: black;
+    cursor: pointer;
+    font-family: 'Tangerine', cursive;
+    color: white;
+    font-size: 42px;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    z-index: -1;
+    filter: grayscale(1);
+}
+
+#story {
+    width: 500px;
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+    white-space: pre-wrap;
+}
+
+.shift {
+    animation: shift 1s ease;
+}
+
+.shift2 {
+    animation: shift2 5s ease;
+}
+
+@keyframes shift {
+    0% {
+        filter: blur(100px);
+    }
+    
+    100% {
+        filter: blur(0px);
+    }
+}
+
+@keyframes shift2 {
+    0% {
+        filter: grayscale(1);
+    }
+
+    100% {
+        filter: grayscale(0);
+    }
+}
+
+.link {
+    z-index: 2;
+    width: 400px;
+    position: fixed;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .link > img {
+    width: 400px;
+  }
+  
+  .link:hover {
+    opacity: 0.35;
+  }
+  
+#link1 {
+    left: 35%;
+    bottom: 10%;
+  }
