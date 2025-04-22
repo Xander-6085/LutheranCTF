@@ -32,5 +32,5 @@ if (isset($uri[1]) && $uri[1] != "index" && $uri[1] != "") {
       header("Location: login.php");
   }
 } else {
-  header("Location: landing.html");
+  header("Location: ecommerce/index.html");
 }
