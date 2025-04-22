@@ -27,7 +27,6 @@ class AngelController
     header($response['status_code_header']);
     if ($response['body']) {
       echo $response['body'];
-      error_log("body: " . $response['body']);
     }
   }
 
@@ -41,8 +40,10 @@ class AngelController
   {
     // $stored_hash = hash("sha256", "34250003024812");
     $stored_hash = "0e92299296652799688472441889499080435414654298793501210067779366";
-    $user_input = $_POST["password"];
-    $hashed_input = hash("sha256", $user_input);
+
+    $user_input = (array) json_decode(file_get_contents("php://input"), TRUE);
+    $input_password = $user_input["password"];
+    $hashed_input = hash("sha256", $input_password);
     error_log("stored hash: " . $stored_hash . "\ninput: " . $hashed_input);
 
     // VULNERABILITY: Using '==' to compare can turn both strings to integers, so the hash starting with 0e will cause juggling.

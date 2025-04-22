@@ -28,7 +28,9 @@ if (isset($uri[1]) && $uri[1] != "index" && $uri[1] != "") {
       break;
     case "leaderboard":
     case "users":
+    default:
+      header("Location: login.php");
   }
+} else {
+  header("Location: landing.html");
 }
-
-header("Location: landing.html");
