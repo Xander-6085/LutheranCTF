@@ -41,7 +41,6 @@ class AngelController
   {
     // $stored_hash = hash("sha256", "34250003024812");
     $stored_hash = "0e92299296652799688472441889499080435414654298793501210067779366";
-    echo $stored_hash;
     $user_input = $_POST["password"];
     $hashed_input = hash("sha256", $user_input);
     error_log("stored hash: " . $stored_hash . "\ninput: " . $hashed_input);
