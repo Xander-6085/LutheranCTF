@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Mirrors</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+    @keyframes MoveUpDown {
+        0%, 100% {
+            margin-top: 0;
+            margin-left: -5px;
+        }
+        50% {
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+
+    @keyframes MoveDownUp {
+        0%, 100% {
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+        50% {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+    }
+    
+    @keyframes Spin {
+        0% {
+            rotate: 0deg;
+        }
+        100% {
+            rotate: 360deg;
+        }
+    }
+
+    #maze-container {
+        position: absolute;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+        grid-template-rows: 20;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    }
+
+    #maze-container > .gridCell {
+        width: 100px;
+        height: 40px;
+    }
+
+    #maze-container > .gridCell:nth-child(odd) {
+        background-color: red;
+        animation: MoveUpDown 0.8s linear infinite;
+    }
+    
+    #maze-container > .gridCell:nth-child(even) {
+        background-color: blue;
+        animation: MoveDownUp 1.35291s linear infinite;
+    }
+
+    .pinwheel {
+        animation: Spin 1s alternate infinite;
+        position: absolute;
+        left: 25vw;
+        top: 25vw;
+        width: 150px;
+    }
+    
+
+</style>
+<body>
+    
+    <div id="maze-container">
+
+    </div>
+    <img class="pinwheel" src="./static/pinwheel.png" alt="The Wheel of Destiny" />
+</body>
+<script>
+    window.addEventListener('load', (event) => {
+        addMazeElements()
+    })
+
+    let addMazeElements = () => {
+        let mazeContainer = document.getElementById("maze-container")
+        
+        let columns = 20
+        let rows = 100      
+        console.log(mazeContainer.style)
+        console.log(rows)
+        console.log(columns)
+        for(let i = 0; i < rows * columns; i++) {
+            let cell = createGridCell()
+            mazeContainer.appendChild(cell)
+            console.log(cell)
+        }
+        mazeContainer.scrollTop += 400;
+    }
+
+    let createGridCell = () => {
+        let cell = document.createElement("div")
+        cell.classList.add("gridCell")
+        return cell
+    }
+</script>
+</html>
