@@ -1,0 +1,4 @@
+1. Hashing algorithm: SHA256
+2. PHP
+3. Type Juggling
+4. First characters of hash: 0e... or entire hash
