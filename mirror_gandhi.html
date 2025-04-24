@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>Mirror Gandhi</title>
+</head>
+<style>
+  body {
+    background-image: url("static/mirror_gandhi_background.jpg");
+    background-size: 150px;
+  }
+
+  #mirror_gandhi {
+    width: 300px;
+    height: auto;
+    margin-left: 150px;
+    margin-right: 75px;
+    margin-top: 75px;
+  }
+
+  .container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+
+
+  @font-face {
+    font-family: Papyrus;
+    src: url("static/papyrus/papyrus.ttf");
+  }
+
+  #mirror_gandhi_text {
+    font-size: 2rem;
+    font-family: Papyrus;
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+</style>
+
+<body>
+  <div class='container'>
+    <img src='static/mirror_gandhi.jpg' id='mirror_gandhi'>
+    <span id='mirror_gandhi_text'>Hello, I am mirror Gandhi. If it is the login you seek, you should speak to the
+      <a href='clownworld.html'>clowns</a>. They are a cautious folk, but remember the phrase 'sha256' and they should
+      accept you</span>
+  </div>
+</body>
+
+</html>
