@@ -15,4 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   } else {
     echo "Incorrect password\n";
   }
+} else {
+  header("Location: clownworld.html");
 }
