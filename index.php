@@ -23,6 +23,7 @@ if (isset($uri[2])) {
 if (isset($uri[1]) && $uri[1] != "index" && $uri[1] != "") {
   switch ($uri[1]) {
     case "angel":
+    case "login":
       $controller = new AngelController($requestMethod);
       $controller->processRequest();
       break;

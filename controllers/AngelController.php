@@ -44,17 +44,19 @@ class AngelController
     $user_input = (array) json_decode(file_get_contents("php://input"), TRUE);
     $input_password = $user_input["password"];
     $hashed_input = hash("sha256", $input_password);
-    error_log("stored hash: " . $stored_hash . "\ninput: " . $hashed_input);
+    $response['body'] = ("stored hash: " . $stored_hash . "\ninput: " . $hashed_input);
 
     // VULNERABILITY: Using '==' to compare can turn both strings to integers, so the hash starting with 0e will cause juggling.
 
     if ($hashed_input == $stored_hash) {
       $response['status_code_header'] = 'HTTP/1.1 200 Success';
-      $response['body'] = "Welcome admin, flag is: ctf{hawk_tuah}";
+      $response['body'] = "Welcome admin, flag is: pracsec{hawk_tuah}";
       error_log("yay");
       return $response;
     } else {
-      return $this->notFoundResponse();
+      $response['status_code_header'] = 'HTTP/1.1 200 Success';
+      return $response;
+      // return $this->notFoundResponse();
     }
   }
 
