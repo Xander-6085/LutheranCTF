@@ -2,3 +2,6 @@
 2. PHP
 3. Type Juggling
 4. First characters of hash: 0e... or entire hash
+
+hawk
+awesomeSauce

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Angel Login</title>
+  <title>Login</title>
   <script src="scripts/login.js"></script>
 </head>
 
@@ -17,6 +17,7 @@
     <input type="password" id="password">
   </p>
   <button id="submit-login">Submit</button>
+  <h2 id="response"></h2>
 </body>
 
 </html>
