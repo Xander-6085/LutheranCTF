@@ -21,4 +21,6 @@ By default, PHP "juggles" some strings into other types when using '==' or '!=' 
 It would be very impressive if someone tried one of these colliding hashes immediately in the login prompt, so we included a bunch of hint pages that make the challenges more reasonable. 
 Notably, the login page sends the password in a post request to login-attempt.php. If the user tries to visit login-attempt.php, they are redirected to clownworld.html.
 
-This clown page is also accessible through the main watch pages. If a user scrolls to the bottom of the index page, they will see 
+This clown page is also accessible through the main watch pages. If a user scrolls to the bottom of the index page, they will see a picture of Gandhi that forwards to a mirror page. The mirror page leaks the hashing function (SHA256) and provides a link to the clown page.
+
+The clown page is chaotic, but clicking on each clown/pinwheel brings the user to hint pages. The first goes to a Martin Luther page that uses a php calculator to show what type juggling is, and the second goes to a confucious page that leaks the hash. Using these pieces of information, the users should be able to figure out the login, which is also available by clicking on the cat camera from the clown page.
