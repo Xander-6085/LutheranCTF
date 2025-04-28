@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hall of Mirrors</title>
 </head>
+
 <style>
     body {
         margin: 0;
@@ -74,6 +75,11 @@
         width: 150px;
     }
 
+    .clown:hover {
+        opacity: 0.75;
+        cursor: pointer;   
+    }
+
     .clown-1 {
         position: absolute;
         left: 80vw;
@@ -83,7 +89,7 @@
         opacity: 0.13;
     }
 
-    #cat-frame {
+    .cat-frame {
         width: 50vw;
         height: 50vh;
         position: absolute;
@@ -94,14 +100,51 @@
         
     }
 
+    .on-top  {
+        z-index: 50;
+    }
+
     .clown-2 {
         position: absolute;
-        left: 5vw;
+        left: 2vw;
         top: 32vh;
         width: 20vw;
         background-color: transparent;
         opacity: 0.80;
     }
+
+    .clown-2-speech-bubble {
+        position: absolute;
+        left: 2vw;
+        top: 20vh;
+        width: 20vw;
+        
+        background-color: transparent;
+        padding: 1.25%;
+        opacity: 0.80;
+    }
+    
+    .speech-bubble {
+        position: relative;
+        background: #00aabb;
+        border-radius: .4em;
+    }
+    
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: #00aabb;
+        border-bottom: 0;
+        border-left: 0;
+        margin-left: -10px;
+        margin-bottom: -20px;
+    }
+
 
     
 
@@ -111,15 +154,34 @@
     <div id="maze-container">
 
     </div>
-    <img class="pinwheel" src="./static/pinwheel.png" alt="The Wheel of Destiny" />
-    <img class="clown-1" src="./static/clown-dance.gif" />
+    
+
+    <a href="/confucius.html"><img class="pinwheel" src="./static/pinwheel.png" alt="The Wheel of Destiny" /></a>
+    <a href="/luther.php"><img class="clown-1" src="./static/clown-dance.gif" /></a>
+    
+
+    <div class="clown-2-speech-bubble speech-bubble">
+        <p>Hello! we are the <a href='https://en.wikipedia.org/wiki/Clown' style='color: blue;'>Clowns.</a>
+            We want to get revenge the watch manufacturers for kicking me out of my awesome watch site.
+            We've found their hideout, but there's this code we can't crack. Can you help us? 
+            If you're stuck, try asking the 2 wise men of old for help.
+        </p>
+    </div>
     <img class="clown-2" src="./static/clown-juggle.gif" />
-    <iframe src="https://meow.camera/#4258783365322591678" id="cat-frame"></iframe>
+    
+    <a href="/login.php" class="cat-frame on-top"></a>
+    <iframe src="https://meow.camera/#4258783365322591678" class="hover-pointer cat-frame"></iframe>
+    
+    
 </body>
 <script>
     window.addEventListener('load', (event) => {
         addMazeElements()
     })
+
+    function redirectToLogin() {
+        window.location.href = "login.php"
+    }
 
     let addMazeElements = () => {
         let mazeContainer = document.getElementById("maze-container")
