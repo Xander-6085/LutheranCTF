@@ -44,7 +44,9 @@ map.C = `((()=>{})[${fromString('constructor')}](${fromString('return escape')})
 
 const compile = code => `(()=>{})[${fromString('constructor')}](${fromString(code)})()`;
 
-let output = compile('console.log("Hello world!");');
+let res = fs.readFileSync('hint.js', "ascii");
+console.log(res)
+let output = compile(res);
 
 
 fs.writeFile('output.js', output, (err) => {

@@ -1,0 +1,28 @@
+#ghandi {
+    position: absolute;
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    right: 0;
+    bottom: 0;
+    
+
+    img {
+        width: 80%;
+        margin-left: 5%;
+        -webkit-transform: scale(-1, 1);
+        -moz-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    }
+    .background {
+        padding: 5%;
+        background-color: palegoldenrod;
+    }
+    .text {
+        width: 85%;
+        padding: 2% 2% 0 2%;
+        background-color: paleturquoise;
+    }
+}
+
